@@ -1,0 +1,452 @@
+* {
+    transition: all 0.3s ease;
+}
+
+body {
+    background: rgb(107, 94, 134);
+    background: radial-gradient(circle, rgba(107, 94, 134, 1) 0%, rgba(17, 29, 42, 1) 100%);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overflow-y:scroll;
+    scrollbar-width: none;
+}
+
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: top 0.3s ease;
+    z-index: 999;
+}
+
+.header-container {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ 
+}
+
+.header-info {
+    padding: 10px 15px;
+}
+
+.header-info a {
+    text-decoration: none;
+}
+
+.header-icons {
+    font-size: 26px;
+    cursor: pointer;
+    margin-left: 25px;
+    transition: transform 0.5s ease, color 0.5s ease;
+    color: white;
+}
+
+.header-icons:hover {
+    color: #fd25fd5e;
+    transform: rotateY(360deg);
+}
+
+.header-projects {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    gap: 15px;
+}
+
+.header-projects p {
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -36em;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 9;
+}
+
+.page-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+}
+
+.page-wrapper h1 {
+    font-size: 42px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.page-wrapper-diff {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    padding-left: 4.25em;
+    padding-top: 5.25em;
+    display: flex;
+}
+
+.page-wrapper-diff p {
+    font-size: 10.9em;
+    line-height: 100%;
+    color: white;
+}
+
+.row-1 {
+    position: relative;
+}
+
+.row-1 p {
+    cursor: default;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Helvetica Now Display, sans-serif;
+    font-size: 10.9em;
+    font-weight: 500;
+    line-height: 100%;
+}
+
+.row-2 {
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: -1.25em;
+    display: flex;
+    position: relative;
+}
+
+.row-2 p {
+    cursor: default;
+    margin-left: -0.75em;
+}
+
+/*MAIN PROJECT SECTION*/
+
+.main-background {
+    background: rgb(0, 21, 33);
+    background: -moz-linear-gradient(180deg, rgba(0, 21, 33, 1) 0%, rgba(0, 0, 0, 1) 94%);
+    background: -webkit-linear-gradient(180deg, rgba(0, 21, 33, 1) 0%, rgba(0, 0, 0, 1) 94%);
+    background: linear-gradient(180deg, rgba(0, 21, 33, 1) 0%, rgba(0, 0, 0, 1) 94%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#001521", endColorstr="#000000", GradientType=1);
+}
+
+.section {
+    background-color: #000;
+    height: 100vh;
+}
+
+.left-content {
+    width: 100%;
+    margin: 0;
+    padding-left: 5.25em;
+    padding-top: 8.55em;
+}
+
+.left-content hr {
+    margin: 0 auto;
+    width: 100%;
+    border: 1px solid #f5f5f5;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.h1-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+    margin-bottom: 5.25em;
+}
+
+.h1-container h1 {
+    font-size: 96px;
+}
+
+.digipara-section {
+    display: flex;
+    align-items: center;
+    gap: 5em;
+}
+
+.digipara-section button {
+    position: relative;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: transparent;
+    border: 2px solid #ffffff56;
+    overflow: hidden;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.digipara-section button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background-color: #171c2452;
+    transition: height 0.5s ease;
+    z-index: 0;
+}
+
+.digipara-section button:hover::before {
+    height: 100%;
+}
+
+.digipara-section button:hover {
+    color: white;
+    border-color: white;
+}
+
+.digipara-section button span {
+    position: relative;
+    z-index: 1;
+}
+
+.digipara-project {
+    width: 550px;
+    height: 355px;
+}
+
+.digipara-project img {
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+}
+
+.main-project-img {
+    opacity: 0;
+    transform: translate(-180px, 50px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.main-project-img.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.popup-show {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.popup-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(35deg, rgba(0, 0, 0, 1) 15%, rgba(4, 18, 36, 1) 75%, rgba(1, 5, 13, 1) 100%);
+    width: 575px;
+    padding: 20px 45px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    text-align: center;
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.popup-show.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup-content {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.popup-show.active .popup-content {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.popup-content h2 {
+    color: #d0ebfd;
+    font-size: 36px;
+}
+
+.popup-content span {
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+.popup-content-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.github-guide-section {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(109, 109, 109, 0.096);
+    cursor: pointer;
+    width: 175px;
+    padding: 50px 75px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.github-guide-section a {
+    text-decoration: none;
+}
+
+.github-guide-section:hover {
+    background-color: rgba(109, 109, 109, 0.205);
+    transform: translateY(-5px);
+}
+
+.portfolio-guide {
+    color: #d0ebfd;
+    font-size: 84px;
+}
+
+/*AFTER MAIN PROJECTS*/
+.zoom-section {
+    position: relative;
+    height: 100vh;
+    background-color: #dfdec7;
+    color: white;
+    overflow: hidden;
+    margin-top: -1em;
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+
+.zoom-content {
+    padding: 35px;
+    max-width: 1400px;
+    line-height: 1.5;
+}
+
+.zoom-content p {
+    font-size: 32px;
+    color: black;
+    word-wrap: break-word;
+}
+
+.zoom-content span {
+    color: #da1111;
+}
+
+.about-me {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding: 15em;
+    padding-right: 20em;
+}
+
+.about-me p {
+    color: black;
+    font-size: 18px;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.about-me span {
+    color: #da1111;
+}
+
+.about-me-img {
+    Width: 220px;
+    height: 250px;
+    margin-left: 25px;
+}
+
+.about-me-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.contacts-section {
+    padding: 25px 10em;
+    color: White;
+    background-color: black;
+}
+
+.contacts-section p {
+    font-size: 18px;
+}
+
+.detailed-info {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.detailed-info div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 8px;
+}
+
+.detailed-info a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.detailed-info a:hover {
+    text-decoration: underline;
+}
+
+.footer-icons {
+    font-size: 24px;
+    color: rgb(201, 255, 246);
+}
+
+.open-icons {
+    font-size: 18px;
+}
