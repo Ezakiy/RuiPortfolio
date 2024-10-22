@@ -243,7 +243,7 @@ function adjustForScreenSize() {
   if (width < 768) {
     letterCamera.fov = 75; // Adjust field of view for smaller screens
     letterCamera.position.z = 7; // Bring the camera closer for mobile view
-    circleCamera.position.z = 14; // Adjust circle camera position for mobile
+    circleCamera.position.z = 12; // Adjust circle camera position for mobile
   } else if (width < 1366) {
     letterCamera.fov = 65; // Adjust field of view for medium screens
     letterCamera.position.z = 6; // Moderate camera distance for tablets
@@ -268,5 +268,12 @@ function adjustForScreenSize() {
 adjustForScreenSize();
 // Call the function on resize
 window.addEventListener('resize', adjustForScreenSize);
+
+document.body.style.touchAction = 'none'; // Prevent canvas from blocking scroll
+
+// Listen to touch events to allow scrolling
+document.body.addEventListener('touchmove', function(event) {
+    event.preventDefault(); // Stop canvas from eating up scroll events
+}, { passive: false });
 
 

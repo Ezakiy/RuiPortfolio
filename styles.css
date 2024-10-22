@@ -10,8 +10,12 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     scrollbar-width: none;
+}
+
+html{
+    overflow-y: auto;
 }
 
 .fade-in-on-scroll {
@@ -79,10 +83,7 @@ header {
 }
 
 #animation-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -36em;
+    margin-top: -35em;
     height: 100vh;
     width: 100%;
     position: relative;
@@ -90,8 +91,8 @@ header {
 }
 
 #circle-canvas {
-    width: 100vw;  /* full viewport width */
-    height: 100vh; /* full viewport height */   
+    width: 100vw;
+    height: 100vh; 
     display: block;
 }
 
@@ -495,6 +496,18 @@ header {
         margin-bottom: 0;
     }
 
+    .popup-content{
+        padding: 0;
+        width: 555px;
+        position: absolute;
+        left: 50%;
+        margin: 0 auto;
+    }
+    .github-guide-section{
+        width: 175px;
+        height: 95px;
+    }
+
 }
 
 @media only screen and (max-width: 1180px) {
@@ -651,7 +664,7 @@ header {
         padding: 0;
         width: 325px;
         position: absolute;
-        left: 46%;
+        left: 50%;
         margin: 0 auto;
     }
     .github-guide-section{
