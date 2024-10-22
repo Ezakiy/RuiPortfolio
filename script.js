@@ -1,31 +1,31 @@
 function scrollToAboutMe() {
-    const target = document.getElementById('about');
-    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-    const duration = 1500;
-    let start = null;
+  const target = document.getElementById('about');
+  const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+  const duration = 1500;
+  let start = null;
 
-    window.requestAnimationFrame(function step(timestamp) {
-        if (!start) start = timestamp;
-        const progress = timestamp - start;
-        const yOffset = Math.min(progress / duration * targetPosition, targetPosition);
-        window.scrollTo(0, yOffset);
-        if (progress < duration) window.requestAnimationFrame(step);
-    });
+  window.requestAnimationFrame(function step(timestamp) {
+    if (!start) start = timestamp;
+    const progress = timestamp - start;
+    const yOffset = Math.min(progress / duration * targetPosition, targetPosition);
+    window.scrollTo(0, yOffset);
+    if (progress < duration) window.requestAnimationFrame(step);
+  });
 }
 
 function scrollToContacts() {
-    const target = document.getElementById('contacts');
-    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-    const duration = 1500;
-    let start = null;
+  const target = document.getElementById('contacts');
+  const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+  const duration = 1500;
+  let start = null;
 
-    window.requestAnimationFrame(function step(timestamp) {
-        if (!start) start = timestamp;
-        const progress = timestamp - start;
-        const yOffset = Math.min(progress / duration * targetPosition, targetPosition);
-        window.scrollTo(0, yOffset);
-        if (progress < duration) window.requestAnimationFrame(step);
-    });
+  window.requestAnimationFrame(function step(timestamp) {
+    if (!start) start = timestamp;
+    const progress = timestamp - start;
+    const yOffset = Math.min(progress / duration * targetPosition, targetPosition);
+    window.scrollTo(0, yOffset);
+    if (progress < duration) window.requestAnimationFrame(step);
+  });
 }
 
 document.getElementById('header-contacts-link').addEventListener('click', scrollToContacts);
@@ -34,50 +34,50 @@ document.getElementById('header-contacts-link').addEventListener('click', scroll
 const fadeInElements = document.querySelectorAll('.fade-in-on-scroll');
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        } else {
-            entry.target.classList.remove('visible');
-        }
-    });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    } else {
+      entry.target.classList.remove('visible');
+    }
+  });
 }, {
-    threshold: 0.1
+  threshold: 0.1
 });
 
 fadeInElements.forEach(el => {
-    observer.observe(el);
+  observer.observe(el);
 });
 
 let lastScrollTop = 0;
 const header = document.querySelector('header');
 
 window.addEventListener('scroll', () => {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop) {
-        header.style.top = '-60px';
-    } else {
-        header.style.top = '0';
-    }
-    lastScrollTop = scrollTop;
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  if (scrollTop > lastScrollTop) {
+    header.style.top = '-60px';
+  } else {
+    header.style.top = '0';
+  }
+  lastScrollTop = scrollTop;
 });
 
 const mainProjectImg = document.querySelectorAll('.main-project-img');
 
 const observerr = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        } else {
-            entry.target.classList.remove('visible');
-        }
-    });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    } else {
+      entry.target.classList.remove('visible');
+    }
+  });
 }, {
-    threshold: 0.1
+  threshold: 0.1
 });
 
-mainProjectImg.forEach(er =>{
-    observerr.observe(er);
+mainProjectImg.forEach(er => {
+  observerr.observe(er);
 });
 
 //popup logic
@@ -87,26 +87,26 @@ const popupContent = document.querySelector('.popup-content');
 const closePopup = document.querySelector('.close-popup');
 
 popupBtn.addEventListener('click', function (event) {
-    event.stopPropagation();
-    popup.classList.add('active');
+  event.stopPropagation();
+  popup.classList.add('active');
 });
 
 closePopup.addEventListener('click', function (event) {
-    event.stopPropagation();
-    popup.classList.remove('active');
+  event.stopPropagation();
+  popup.classList.remove('active');
 });
 
 document.addEventListener('click', function (event) {
-    if (popup.classList.contains('active') && !popupContent.contains(event.target) && event.target !== popupBtn) {
-        popup.classList.remove('active');
-    }
+  if (popup.classList.contains('active') && !popupContent.contains(event.target) && event.target !== popupBtn) {
+    popup.classList.remove('active');
+  }
 });
 
 popupContent.addEventListener('click', function (event) {
-    event.stopPropagation();
+  event.stopPropagation();
 });
 
-//letter R animation
+// Letter R Animation
 const circleCanvas = document.getElementById('circle-canvas');
 const circleRenderer = new THREE.WebGLRenderer({ canvas: circleCanvas, alpha: true });
 circleRenderer.setSize(window.innerWidth, window.innerHeight);
@@ -122,7 +122,7 @@ const staticCircleMaterial = new THREE.MeshBasicMaterial({
   side: THREE.DoubleSide
 });
 const staticCircle = new THREE.Mesh(staticCircleGeometry, staticCircleMaterial);
-circleScene.add(staticCircle); 
+circleScene.add(staticCircle);
 
 let circleMeshes = [];
 
@@ -161,9 +161,10 @@ function animateCircleScene() {
   circleRenderer.render(circleScene, circleCamera);
 }
 
-setInterval(createExpandingCircle, 2000); 
+setInterval(createExpandingCircle, 2000);
 animateCircleScene();
 
+// Letter R Scene Setup
 const letterCanvas = document.getElementById('letter-canvas');
 const letterScene = new THREE.Scene();
 const letterCamera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -233,10 +234,27 @@ loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json
   animateLetterScene();
 });
 
-window.addEventListener('resize', function () {
+// Function to adjust for screen size
+function adjustForScreenSize() {
   const width = window.innerWidth;
   const height = window.innerHeight;
 
+  // Adjust camera position and settings based on window size
+  if (width < 768) {
+    letterCamera.fov = 75; // Adjust field of view for smaller screens
+    letterCamera.position.z = 7; // Bring the camera closer for mobile view
+    circleCamera.position.z = 14; // Adjust circle camera position for mobile
+  } else if (width < 1366) {
+    letterCamera.fov = 65; // Adjust field of view for medium screens
+    letterCamera.position.z = 6; // Moderate camera distance for tablets
+    circleCamera.position.z = 10; // Adjust circle camera position for medium screens
+  } else {
+    letterCamera.fov = 55; // Regular field of view for larger screens
+    letterCamera.position.z = 5; // Regular camera distance
+    circleCamera.position.z = 5; // Regular circle camera position
+  }
+
+  // Update render sizes and camera aspect ratios
   circleRenderer.setSize(width, height);
   circleCamera.aspect = width / height;
   circleCamera.updateProjectionMatrix();
@@ -244,4 +262,11 @@ window.addEventListener('resize', function () {
   letterRenderer.setSize(width, height);
   letterCamera.aspect = width / height;
   letterCamera.updateProjectionMatrix();
-});
+}
+
+// Call the function on load
+adjustForScreenSize();
+// Call the function on resize
+window.addEventListener('resize', adjustForScreenSize);
+
+

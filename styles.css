@@ -10,7 +10,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    overflow-y:scroll;
+    overflow-y: scroll;
     scrollbar-width: none;
 }
 
@@ -41,7 +41,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
- 
+
 }
 
 .header-info {
@@ -68,7 +68,7 @@ header {
 .header-projects {
     display: flex;
     align-items: center;
-    margin-right: 50px;
+    margin-right: 100px;
     gap: 15px;
 }
 
@@ -87,6 +87,12 @@ header {
     width: 100%;
     position: relative;
     z-index: 9;
+}
+
+#circle-canvas {
+    width: 100vw;  /* full viewport width */
+    height: 100vh; /* full viewport height */   
+    display: block;
 }
 
 .page-wrapper {
@@ -157,6 +163,9 @@ header {
 }
 
 .section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     background-color: #000;
     height: 100vh;
 }
@@ -166,6 +175,7 @@ header {
     margin: 0;
     padding-left: 5.25em;
     padding-top: 8.55em;
+    padding-bottom: 8.55em;
 }
 
 .left-content hr {
@@ -351,11 +361,9 @@ header {
 /*AFTER MAIN PROJECTS*/
 .zoom-section {
     position: relative;
-    height: 100vh;
     background-color: #dfdec7;
     color: white;
     overflow: hidden;
-    margin-top: -1em;
     transform: scale(1);
     transition: transform 0.2s ease;
 }
@@ -380,8 +388,8 @@ header {
     position: relative;
     display: flex;
     justify-content: flex-end;
-    padding: 15em;
-    padding-right: 20em;
+    padding: 10em;
+    padding-right: 10em;
 }
 
 .about-me p {
@@ -396,7 +404,7 @@ header {
 }
 
 .about-me-img {
-    Width: 220px;
+    max-Width: 220px;
     height: 250px;
     margin-left: 25px;
 }
@@ -449,4 +457,209 @@ header {
 
 .open-icons {
     font-size: 18px;
+}
+
+/*Main Project section*/
+@media only screen and (max-width: 1080px) {
+    .h1-container {
+        margin-bottom: 0;
+    }
+
+    .h1-container h1 {
+        font-size: 36px;
+    }
+
+    .main-project-img iframe {
+        width: 100%;
+        height: auto;
+        width: 500px;
+        height: 250px;
+    }
+
+    .page-wrapper h1,
+    .row-1 p,
+    .row-2 p {
+        font-size: 9.5em;
+    }
+}
+
+@media only screen and (max-width: 1310px) {
+    .main-project-img iframe {
+        width: 100%;
+        height: auto;
+        width: 680px;
+        height: 250px;
+    }
+
+    .h1-container {
+        margin-bottom: 0;
+    }
+
+}
+
+@media only screen and (max-width: 1180px) {
+    .h1-container h1 {
+        font-size: 56px;
+    }
+
+    .main-project-img iframe {
+        width: 100%;
+        height: auto;
+        width: 500px;
+        height: 250px;
+    }
+}
+
+@media only screen and (max-width:1010px) {
+    .main-project-img iframe {
+        width: 100%;
+        height: auto;
+        width: 400px;
+        height: 250px;
+    }
+}
+
+@media only screen and (max-width: 910px) {
+    .main-project-img iframe {
+        width: 100%;
+        height: auto;
+        width: 300px;
+        height: 250px;
+    }
+}
+
+@media only screen and (max-width: 810px) {
+    .main-project-img iframe {
+        width: 100%;
+        height: auto;
+        width: 260px;
+        height: 250px;
+    }
+}
+
+/*About me section*/
+@media only screen and (max-width: 1180px) {
+
+    .about-me {
+        flex-direction: column;
+        padding: 0em 15em;
+    }
+
+    .about-me-img {
+        max-width: 180px;
+        height: auto;
+        margin-bottom: 25px;
+        margin-left: 0;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .header-icons {
+        margin-left: 10px;
+        font-size: 20px;
+    }
+
+    .row-1 p,
+    .row-2 p {
+        font-size: 7.5em;
+    }
+
+    .page-wrapper-diff {
+        padding: 5em 1em;
+    }
+
+    .digipara-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left-content {
+        padding: 0;
+    }
+
+    .main-project-img iframe {
+        width: 100%;
+        height: auto;
+        width: 360px;
+    }
+
+    .about-me {
+        flex-direction: column;
+        padding: 2em;
+        text-align: center;
+        align-items: center;
+    }
+
+    .about-me-img {
+        width: 150px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .zoom-content p {
+        font-size: 1.2em;
+    }
+
+    .contacts-section {
+        padding: 10px 2em;
+        text-align: center;
+    }
+
+    .detailed-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detailed-info div {
+        justify-content: center;
+    }
+
+    .popup-content{
+        padding: 0;
+        width: 425px;
+    }
+    .github-guide-section{
+        width: 75px;
+        height: 75px;
+    }
+
+    .popup-content h2{
+        font-size: 28px;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+
+    .page-wrapper h1,
+    .row-1 p,
+    .row-2 p {
+        font-size: 5.5em;
+    }
+
+    .digipara-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .h1-container h1 {
+        font-size: 56px;
+    }
+
+    .popup-content{
+        padding: 0;
+        width: 325px;
+        position: absolute;
+        left: 46%;
+        margin: 0 auto;
+    }
+    .github-guide-section{
+        width: 75px;
+        height: 75px;
+    }
+
+    .popup-content h2{
+        font-size: 28px;
+    }
 }
